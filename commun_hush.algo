@@ -1,0 +1,24 @@
+ALGORITHM commun_hash
+VAR
+    arr1 : ARRAY_OF INTEGER[15];
+    arr2 : ARRAY_OF INTEGER[10];
+    htab:HASH_TABLE<INTEGER,INTEGER>;
+    count:INTEGER:=0;
+    sum: INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO arr1.length STEP step  DO
+        htab.insert(i, arr1[i])
+    END_FOR
+    FOR j FROM 0 TO arr2.length STEP step  DO
+        htab.insert(j, arr2[j]);
+    END_FOR
+    FOR k FROM 0 TO htab.length STEP step  DO
+            IF (htab.lookup(htab.get(k)))=true THEN
+                count:=count+1;
+            END_IF
+            IF (count>1) THEN
+                sum:= sum+ htab.get(k);
+            END_IF
+    END_FOR
+    write(sum);
+END

@@ -1,0 +1,16 @@
+ALGORITHM commun_array
+VAR
+    tab1: ARRAY_OF INTEGER[l5];
+    tab2 : ARRAY_OF INTEGER[l0];
+    sum: INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO tab1.length STEP step  DO
+        FOR j FROM 0 TO tab2.length STEP step  DO
+            IF (tab1[i])<>tab2[j] THEN
+                break;
+            END_IF
+            sum:=sum+tab1[i];
+        END_FOR
+    END_FOR
+    write(sum);
+END
